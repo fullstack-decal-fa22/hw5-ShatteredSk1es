@@ -1,4 +1,6 @@
-// ___________________ import statement
+import NewPost from "./NewPost";
+import Comments from "./Comments"
+import axios from "axios";
 
 const Post = ({ title, body, comments, id }) => {
   console.log(id)
@@ -7,7 +9,7 @@ const Post = ({ title, body, comments, id }) => {
       {title}
     </h3>
     <p>{body}</p>
-    <Comments _________ _________ />
+    <Comments url="id" data="body" />
   </div>
 }
 

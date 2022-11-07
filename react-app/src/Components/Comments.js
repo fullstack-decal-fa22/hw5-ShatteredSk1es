@@ -2,17 +2,15 @@ import {useState} from "react";
 import axios from "axios";
 
 const Comments = ({ postId, comments: initialComments }) => {
-  const [_________, _________] = useState(initialComments);
+  const [func1, array1] = useState(initialComments);
   const [newComment, setNewComment] = useState('');
 
   const handleSubmitComment = () => {
     console.log(newComment)
-    // Un-comment the lines below to complete your solution
-    // ====================
-    // axios.post(__________________, { newComment }).then((res) => {
-    //   ________________;
-    //   ________________
-    // })
+      axios
+      .post(postId, { newComment }).then((res) => {}
+      .then((func1, newComment) => func1(array1), setNewComment(newComment))      
+    
   }
 
   return (
@@ -31,7 +29,7 @@ const Comments = ({ postId, comments: initialComments }) => {
         Submit
       </button>
     </div>
-  )
+  )      
 }
 
 export default Comments;

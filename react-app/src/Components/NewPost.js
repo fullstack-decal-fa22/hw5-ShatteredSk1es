@@ -1,7 +1,8 @@
-import {_________} from "react";
+/* eslint-disable no-undef */
+import {useState} from "react";
 import axios from "axios";
 
-const NewPost = ({ _________ }) => {
+const NewPost = ({ props }) => {
   const [id, setId] = useState();
   const [title, setTitle] = useState();
   const [body, setBody] = useState();
@@ -13,7 +14,7 @@ const NewPost = ({ _________ }) => {
       body
     })
 
-    axios.post(_________, _________).then(_________);
+    axios.post(props.url, props.data).then(props.response);
   }
 
   return <div>
