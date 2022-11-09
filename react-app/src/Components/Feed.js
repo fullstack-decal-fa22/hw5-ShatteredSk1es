@@ -2,6 +2,10 @@ import React from 'react';
 import Post from "./Post";
 import NewPost from "./NewPost";
 import axios from 'axios';
+import {useEffect} from "react";
+import {useState} from "react";
+
+
 
 const Feed = () => {
 
@@ -20,6 +24,7 @@ const Feed = () => {
     getPostsData();
    }, [])
 
+   
    const retFunc = () => {
     axios
     .post("http://localhost:3000/", data) // `url` is the url to post to, `data` is the data to send in the body of the HTTP request
@@ -35,7 +40,7 @@ const Feed = () => {
         )
       }
 
-      <NewPost retFunc />
+      <NewPost function2={getPostsData} />
     </div>
   )
 

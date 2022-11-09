@@ -9,7 +9,7 @@ const Post = ({ title, body, comments, id }) => {
       {title}
     </h3>
     <p>{body}</p>
-    <Comments url="id" data="body" />
+    <Comments postId={id} comments={comments} />
   </div>
 }
 

@@ -2,15 +2,15 @@ import {useState} from "react";
 import axios from "axios";
 
 const Comments = ({ postId, comments: initialComments }) => {
-  const [func1, array1] = useState(initialComments);
+  const [comments, func1] = useState(initialComments);
   const [newComment, setNewComment] = useState('');
 
   const handleSubmitComment = () => {
     console.log(newComment)
       axios
-      .post(postId, { newComment }).then((res) => {}
-      .then((func1, newComment) => func1(array1), setNewComment(newComment))      
-    
+      .post(`http://localhost:3002/post/${postId}/comment`, { newComment }).then((res) => {
+        func1([newComment, ...comments])
+      }) 
   }
 
   return (

@@ -2,7 +2,7 @@
 import {useState} from "react";
 import axios from "axios";
 
-const NewPost = ({ props }) => {
+const NewPost = ({ function2 }) => {
   const [id, setId] = useState();
   const [title, setTitle] = useState();
   const [body, setBody] = useState();
@@ -14,7 +14,7 @@ const NewPost = ({ props }) => {
       body
     })
 
-    axios.post(props.url, props.data).then(props.response);
+    axios.post('http://localhost:3002/post', {id, title, body}).then( () => function2());
   }
 
   return <div>
